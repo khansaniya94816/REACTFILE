@@ -28,29 +28,33 @@ function Updates() {
   ];
 
   return (
-    <div className="px-10">
-      <h1 className="text-center my-10 text-5xl font-semibold">Latest KC Updates</h1>
+    <div className="px-4 sm:px-6 lg:px-10">
+      <h1 className="text-center my-10 text-3xl sm:text-4xl md:text-5xl font-semibold">Latest KC Updates</h1>
 
-      <div className="flex items-start gap-10">
-        <div className="bg-orange-400 text-black p-8 rounded-2xl w-[400px] h-[400px] shadow-lg">
-          <h2 className="text-3xl font-bold">We're Hiring!</h2>
-          <p className="mt-3 text-lg leading-relaxed">
+      <div className="flex flex-col lg:flex-row items-start gap-10">
+        <div className="bg-orange-400 text-black p-6 sm:p-8 rounded-2xl w-full sm:w-[400px] h-auto sm:h-[400px] shadow-lg">
+          <h2 className="text-2xl sm:text-3xl font-bold">We're Hiring!</h2>
+          <p className="mt-3 text-base sm:text-lg leading-relaxed">
             Attend KC's Mega International Recruitment Drive on <strong>Saturday, 29th March 2025</strong> and Join the Fastest Growing Edtech Company Globally.
           </p>
           <div className="mt-6 flex justify-center">
-            <button className="bg-white text-red-500 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-red-100 transition">
+            <button className="bg-white text-red-500 font-semibold py-2 px-5 sm:py-3 sm:px-6 rounded-lg shadow-md hover:bg-red-100 transition">
               Apply Now
             </button>
           </div>
         </div>
 
-        <div className="w-[700px]">
+        <div className="w-full sm:w-[700px]">
           <Swiper
             modules={[Autoplay]}
             spaceBetween={20}
-            slidesPerView={2} 
-            autoplay={{ delay: 2500 }}
             loop={true}
+            autoplay={{ delay: 2500 }}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+            }}
             className="rounded-xl shadow-lg"
           >
             {slides.map((item, index) => (

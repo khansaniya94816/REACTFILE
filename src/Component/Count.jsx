@@ -44,10 +44,10 @@ const Count = () => {
       >
         {slides.map((group, index) => (
           <SwiperSlide key={index}>
-            <div className="grid grid-cols-3 md:grid-cols-4 gap-6 justify-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-center">
               {group.map((source, idx) => (
                 <div key={idx} className="flex justify-center items-center border p-6 shadow-md rounded-lg bg-white">
-                  <img src={source.logo} alt={source.name} className="max-h-20 md:max-h-24" />
+                  <img src={source.logo} alt={source.name} className="max-h-16 sm:max-h-20 md:max-h-24 lg:max-h-28" />
                 </div>
               ))}
             </div>
@@ -55,7 +55,6 @@ const Count = () => {
         ))}
       </Swiper>
 
-      {/* Custom Swiper dot styles */}
       <style>
         {`
           .swiper-pagination {
